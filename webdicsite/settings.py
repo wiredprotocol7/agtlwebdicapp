@@ -25,7 +25,7 @@ SECRET_KEY = '&p@yl_wk*wdeb2jnxsh84=p5&q7=75z_w*&9mvpupb3vujf@-2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['agtlwebdic.pythonanywhere.com']
 
 
 # Application definition
