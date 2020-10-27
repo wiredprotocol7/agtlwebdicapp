@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Agtlabhidan</title>
+    {% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+</head>
+<body>
+<div class="container">
+			<div class="middlepane">
+                                 <form id="searchform" action="/search"	method="POST">
+					{% csrf_token %}
+				<div class="searchBox">
+					<input class="searchInput" id="search_box" type="text" name="search_box" placeholder="Search Anything!" oninput="searchtwo()">
+					<button class="searchButton" type="submit" onclick="Search()">
+						<i class="material-icons"><b>!</b></i>
+					</button>
+				</div>
+					</form>
+
+				            <script type="">
+
+						function searchtwo() {
+		  var y = document.getElementById("search_box" ).value;
+		  document.getElementById("show").value = y;
+		}
+			</script>
+
+
+
+
+				 <form id="addform" method="GET" action="/add">
+
+					<div class="addBox">
+					<input type="text" id ="add_box" class="addInput"  name="add_box" placeholder="Add Word!">
+					<button id="addbtn" type="submit" class="addButton">
+						<i class="material-icons"><b>+</b></i>
+					</button>
+				     </div>
+				 </form>
+
+           </div>
+
+
+</div>
+</body>
+</html>

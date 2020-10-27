@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Agtlabhidan</title>
+    {% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+</head>
+<body>
+<div class="container">
+			<div class="middlepane">
+                <form id="searchform" action="/search"	method="POST">
+					{% csrf_token %}
+				<div class="searchBox">
+					<input class="searchInput" id="search_box" type="text" name="search_box" placeholder="Search Anything!" oninput="searchtwo()">
+					<button class="searchButton" type="submit" onclick="Search()">
+						<i class="material-icons"><b>!</b></i>
+					</button>
+				</div>
+					</form>
+
+
+				 <form id="addform"  action="/add/" method="GET">
+                     {% csrf_token %}
+					<div class="addBox">
+					<input type="text" id ="add_box" class="addInput"  name="add_box" placeholder="Add Word!" oninput="myFunction()">
+					<button id="addbtn" type="submit" class="addButton" onclick="myFunction()">
+						<i class="material-icons"><b>+</b></i>
+					</button>
+				     </div>
+				 </form>
+
+
+            <script type="">
+
+						function searchtwo() {
+		  var y = document.getElementById("search_box" ).value;
+		  document.getElementById("show").value = y;
+		}
+			</script>
+           </div>
+
+<div class="rightpanel">
+			<form id="showform" method="post" action="">
+				{% csrf_token %}
+				<input id="show" style="  width: 40%;
+			  padding: 12px 20px;
+			  margin: 8px 0;
+			  box-sizing: border-box;
+			  border: none;
+			  background-color: white;
+			  color: black;
+			  font-weight: 900;
+			  font-size: 150%;
+			}" type="text"  readonly/>
+
+
+			<textarea  id="contentadd" name= "contentadd" style="  width: 60%;
+			  height: 80px;
+			  padding: 12px 20px;
+
+			  border: 2px solid #ccc;
+			  border-radius: 4px;
+			  background-color: #f8f8f8;
+			  font-size: 22px;
+			  resize: none;" cols="5" rows="3">Add your description!</textarea>
+
+
+
+			  <button class="buttono" style="vertical-align:middle"><span>Add! </span></button>
+			</form>
+
+	         <div id="description">
+				 <h1>Meaning:</h1>
+                  {%  for post in all_posts %}
+
+
+											<textarea  id="meaning1" name= "contentadd" style="  width: 60%;
+					  height: 50px;
+					  padding: 12px 20px;
+
+					  border: 2px solid #ccc;
+					  border-radius: 4px;
+					  background-color: #f8f8f8;
+					  font-size: 16px;
+					  resize: none;" cols="4" rows="3" readonly>{{post.body}}</textarea>
+                   {% endfor %}
+
+
+			 </div>
+
+
+
+
+
+      <script type="">
+
+      document.getElementById("show").value = '{{var}}';
+		function myFunction() {
+		  var x = document.getElementById("add_box" ).value;
+		  document.getElementById("show").value = x;
+		}
+		</script>
+</div>
+</div>
+</body>
+</html>

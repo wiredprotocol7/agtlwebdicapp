@@ -1,0 +1,168 @@
+body, html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.middlepane {
+    width: 30%;
+    height: 100%;
+    float: left;
+    background-color: #fff1d0;
+    border-collapse: collapse;
+}
+
+.rightpane {
+  width: 70%;
+  height: 100%;
+  position: relative;
+  float: right;
+  background-color: #b3d9ff;
+  border-collapse: collapse;
+}
+.searchBox {
+	position: absolute;
+	top: 20%;
+	left: 15%;
+	transform: translate(-60%, 60%);
+	background: #000000;
+	height: 40px;
+	border-radius: 40px;
+	padding: 10px;
+}
+.searchBox:hover>.searchInput {
+	width: 240px;
+	padding: 0 6px;
+}
+.searchBox:hover>.searchButton {
+	background: white;
+	color: #2f3640;
+}
+.searchButton {
+	color: white;
+	float: right;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: #2f3640;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.4s;
+	cursor: pointer;
+}
+.searchInput {
+	border: none;
+	background: none;
+	outline: none;
+	float: left;
+	padding: 0;
+	color: white;
+	font-size: 16px;
+	transition: 0.4s;
+	line-height: 40px;
+	width: 0px;
+}
+@media screen and (max-width: 620px) {
+	.searchBox:hover>.searchInput {
+		width: 150px;
+		padding: 0 6px;
+	}
+}
+
+.addBox {
+	position: absolute;
+	top: 60%;
+	left: 15%;
+	transform: translate(-60%, 60%);
+	background: #000000;
+	height: 40px;
+	border-radius: 40px;
+	padding: 10px;
+}
+.addBox:hover>.addInput {
+	width: 240px;
+	padding: 0 6px;
+}
+.addBox:hover>.addButton {
+	background: white;
+	color: #2f3640;
+}
+.addButton {
+	color: white;
+	float: right;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: #2f3640;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.4s;
+	cursor: pointer;
+}
+.addInput {
+	border: none;
+	background: none;
+	outline: none;
+	float: left;
+	padding: 0;
+	color: white;
+	font-size: 16px;
+	transition: 0.4s;
+	line-height: 40px;
+	width: 0px;
+}
+
+.buttono {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.buttono span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttono span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.buttono:hover span {
+  padding-right: 25px;
+}
+
+.buttono:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+@media screen and (max-width: 620px) {
+	.addBox:hover>.addInput {
+		width: 150px;
+		padding: 0 6px;
+	}
+}
+
+
